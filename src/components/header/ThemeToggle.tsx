@@ -1,9 +1,12 @@
 import { BsSun, BsMoon } from "react-icons/bs";
 import { Button } from "../ui/Button";
+import { useTheme } from "../../hooks/useTheme";
 
 export const ThemeToggle = () => {
+  const { toggleTheme } = useTheme();
+
   return (
-    <Button variant="ghost" size="sm">
+    <Button variant="ghost" size="sm" onClick={toggleTheme}>
       <BsSun
         size={25}
         className="rotate-0 scale-100 transition-all hover:text-slate-900 dark:-rotate-90 dark:scale-0 dark:text-slate-400 dark:hover:text-slate-100"
