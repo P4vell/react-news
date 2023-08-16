@@ -6,7 +6,7 @@ const Home = lazy(() => import("../pages/Home"));
 
 export const PagesRoutes = () => {
   return (
-    <main className="max-w-6xl p-6 mx-auto">
+    <main className="max-w-6xl space-y-6 p-6 mx-auto">
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
