@@ -1,8 +1,9 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { createPortal } from "react-dom";
-import { Button } from "../ui/Button";
+import { useFilters } from "../../hooks/useFilters";
 import { COUNTRIES } from "../../constants";
 import { useEffect } from "react";
+import { Button } from "../ui/Button";
 import { cn } from "../../lib/utils";
 
 type MenuProps = {
@@ -11,6 +12,8 @@ type MenuProps = {
 };
 
 export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
+  const { dispatch } = useFilters();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -53,7 +56,13 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
         <ul>
           {COUNTRIES.map((country) => (
             <li key={country.code}>
-              <Button variant="ghost" className="space-x-4">
+              <Button
+                variant="ghost"
+                className="space-x-4"
+                onClick={() =>
+                  dispatch({ type: "CHANGE_COUNTRY", payload: country })
+                }
+              >
                 <img src={country.flag} alt={`${country.name} flag`} />
                 <p>{country.name}</p>
               </Button>

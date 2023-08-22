@@ -1,6 +1,7 @@
-import { ReactNode } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { FiltersProvider } from "../context/FiltersContext";
 import { ThemeProvider } from "../context/ThemeContext";
+import { BrowserRouter } from "react-router-dom";
+import { ReactNode } from "react";
 
 type ProvidersProps = {
   children: ReactNode;
@@ -9,7 +10,9 @@ type ProvidersProps = {
 export const Providers = ({ children }: ProvidersProps) => {
   return (
     <BrowserRouter>
-      <ThemeProvider>{children}</ThemeProvider>
+      <FiltersProvider>
+        <ThemeProvider>{children}</ThemeProvider>
+      </FiltersProvider>
     </BrowserRouter>
   );
 };

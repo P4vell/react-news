@@ -1,16 +1,19 @@
 import { CATEGORIES } from "../../constants";
-import { TCategory } from "../../types";
+import { useFilters } from "../../hooks/useFilters";
 import { Button } from "../ui/Button";
 
-type CategoriesProps = {
-  changeCategory: (category: TCategory) => void;
-};
+export const Categories = () => {
+  const { dispatch } = useFilters();
 
-export const Categories = ({ changeCategory }: CategoriesProps) => {
   return (
     <div className="flex justify-center items-center flex-wrap gap-4">
       {CATEGORIES.map((category) => (
-        <Button key={category.id} onClick={() => changeCategory(category)}>
+        <Button
+          key={category.id}
+          onClick={() =>
+            dispatch({ type: "CHANGE_CATEGORY", payload: category })
+          }
+        >
           {category.label}
         </Button>
       ))}
