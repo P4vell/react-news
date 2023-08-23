@@ -14,6 +14,11 @@ type MenuProps = {
 export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
   const { dispatch } = useFilters();
 
+  const handleChangeCountry = (country: { name: string; code: string }) => {
+    dispatch({ type: "CHANGE_COUNTRY", payload: country });
+    toggleMenu();
+  };
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -59,9 +64,7 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
               <Button
                 variant="ghost"
                 className="space-x-4"
-                onClick={() =>
-                  dispatch({ type: "CHANGE_COUNTRY", payload: country })
-                }
+                onClick={() => handleChangeCountry(country)}
               >
                 <img src={country.flag} alt={`${country.name} flag`} />
                 <p>{country.name}</p>
