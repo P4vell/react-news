@@ -1,3 +1,4 @@
+import { QueryClientProvider, QueryClient } from "react-query";
 import { FiltersProvider } from "../context/FiltersContext";
 import { ThemeProvider } from "../context/ThemeContext";
 import { BrowserRouter } from "react-router-dom";
@@ -7,12 +8,22 @@ type ProvidersProps = {
   children: ReactNode;
 };
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
+
 export const Providers = ({ children }: ProvidersProps) => {
   return (
-    <BrowserRouter>
-      <FiltersProvider>
-        <ThemeProvider>{children}</ThemeProvider>
-      </FiltersProvider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <FiltersProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </FiltersProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 };
