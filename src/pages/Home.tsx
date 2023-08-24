@@ -1,19 +1,16 @@
 import { Categories } from "../components/homepage/Categories";
+import { Heading } from "../components/homepage/Heading";
 import { SearchBar } from "../components/homepage/SearchBar";
 import { useFilters } from "../hooks/useFilters";
 
 const Home = () => {
-  const {
-    filters: { category, country },
-  } = useFilters();
+  const { filters } = useFilters();
 
   return (
     <>
       <SearchBar />
       <Categories />
-      <h2 className="text-3xl font-semibold text-slate-900 dark:text-slate-200">
-        {`Top ${category.label} News in ${country.name}`}
-      </h2>
+      <Heading filters={filters} />
     </>
   );
 };
