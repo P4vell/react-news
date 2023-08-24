@@ -38,7 +38,7 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
       />
       <div
         className={cn(
-          "w-[70%] max-w-[400px] h-screen fixed top-0 left-0 -translate-x-full flex flex-col bg-white space-y-6 p-6 duration-300 overflow-y-scroll dark:bg-slate-900",
+          "w-[70%] max-w-[400px] h-screen fixed top-0 left-0 -translate-x-full flex flex-col bg-white space-y-6 p-6 duration-300 dark:bg-slate-900",
           {
             "translate-x-0": isOpen,
           }
@@ -58,7 +58,7 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
           Filter by country
         </h2>
 
-        <ul>
+        <ul className="overflow-y-scroll hide-scrollbar">
           {COUNTRIES.map((country) => (
             <li key={country.code}>
               <Button
