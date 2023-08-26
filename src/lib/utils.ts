@@ -33,3 +33,5 @@ export const transformToError = (err: unknown) => {
 
   return new Error(String(err));
 };
+
+export const dateFormatter = new Intl.DateTimeFormat("en-GB");
