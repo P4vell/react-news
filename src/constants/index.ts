@@ -1,6 +1,4 @@
-import { TCategory } from "../types";
-
-const CATEGORIES: TCategory[] = [
+const CATEGORIES = [
   {
     id: 1,
     label: "General",
@@ -120,7 +118,7 @@ const COUNTRIES = [
     flag: "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png",
   },
   {
-    name: "United Kingdom",
+    name: "Great Britain",
     code: "gb",
     flag: "https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/23px-Flag_of_the_United_Kingdom.svg.png",
   },
