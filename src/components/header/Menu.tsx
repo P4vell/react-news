@@ -1,4 +1,5 @@
 import { AiOutlineClose } from "react-icons/ai";
+import { useScrollLock } from "@/hooks/useScrollLock";
 import { createPortal } from "react-dom";
 import { useFilters } from "../../hooks/useFilters";
 import { COUNTRIES } from "../../constants";
@@ -12,6 +13,7 @@ type MenuProps = {
 };
 
 export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
+  const { lockScroll, unlockScroll } = useScrollLock();
   const { dispatch } = useFilters();
 
   const handleChangeCountry = (country: { name: string; code: string }) => {
@@ -21,13 +23,11 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.style.paddingRight = "17px";
+      lockScroll();
     } else {
-      document.body.style.overflow = "";
-      document.body.style.paddingRight = "";
+      unlockScroll();
     }
-  }, [isOpen]);
+  }, [isOpen, lockScroll, unlockScroll]);
 
   return createPortal(
     <>
