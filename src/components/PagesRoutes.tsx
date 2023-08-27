@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 import { PageLoader } from "./ui/PageLoader";
 
 const Home = lazy(() => import("../pages/Home"));
+const Search = lazy(() => import("../pages/Search"));
 
 export const PagesRoutes = () => {
   return (
@@ -10,6 +11,7 @@ export const PagesRoutes = () => {
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/search/:query" element={<Search />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Suspense>
