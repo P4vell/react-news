@@ -1,5 +1,5 @@
-import { CATEGORIES } from "../../constants";
-import { useFilters } from "../../hooks/useFilters";
+import { CATEGORIES } from "@/constants";
+import { useFilters } from "@/hooks/useFilters";
 import { Button } from "../ui/Button";
 
 export const Categories = () => {

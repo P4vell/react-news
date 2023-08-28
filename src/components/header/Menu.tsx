@@ -1,11 +1,11 @@
 import { AiOutlineClose } from "react-icons/ai";
 import { useScrollLock } from "@/hooks/useScrollLock";
 import { createPortal } from "react-dom";
-import { useFilters } from "../../hooks/useFilters";
-import { COUNTRIES } from "../../constants";
+import { useFilters } from "@/hooks/useFilters";
+import { COUNTRIES } from "@/constants";
 import { useEffect } from "react";
 import { Button } from "../ui/Button";
-import { cn } from "../../lib/utils";
+import { cn } from "@/lib/utils";
 
 type MenuProps = {
   isOpen: boolean;

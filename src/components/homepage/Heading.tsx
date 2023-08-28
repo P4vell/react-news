@@ -1,4 +1,4 @@
-import { TFilters } from "../../types";
+import { TFilters } from "@/types";
 
 type HeadingProps = {
   filters: TFilters;

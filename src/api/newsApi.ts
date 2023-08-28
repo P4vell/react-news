@@ -1,5 +1,5 @@
-import { transformToError } from "../lib/utils";
-import { apiDataSchema } from "../lib/schemas/apiData";
+import { transformToError } from "@/lib/utils";
+import { apiDataSchema } from "@/lib/schemas/apiData";
 import { TFilters } from "../types";
 import axios from "axios";
 

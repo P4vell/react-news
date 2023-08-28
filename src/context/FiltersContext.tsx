@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useReducer } from "react";
-import { TFilters } from "../types";
+import { TFilters } from "@/types";
 
 type ReducerAction =
   | {

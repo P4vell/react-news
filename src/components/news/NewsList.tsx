@@ -1,6 +1,6 @@
 import { SkeletonNews } from "./SkeletonNews";
 import { NewsCard } from "./NewsCard";
-import { TNews } from "../../lib/schemas/apiData";
+import { TNews } from "@/lib/schemas/apiData";
 
 type NewsListProps = {
   newsList?: TNews[];

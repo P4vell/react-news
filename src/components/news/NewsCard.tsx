@@ -1,6 +1,6 @@
 import { buttonVariants } from "../ui/Button";
 import { dateFormatter } from "@/lib/utils";
-import { TNews } from "../../lib/schemas/apiData";
+import { TNews } from "@/lib/schemas/apiData";
 import { Link } from "react-router-dom";
 
 type NewsCardProps = {

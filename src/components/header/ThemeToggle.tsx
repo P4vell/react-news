@@ -1,6 +1,6 @@
 import { BsSun, BsMoon } from "react-icons/bs";
+import { useTheme } from "@/hooks/useTheme";
 import { Button } from "../ui/Button";
-import { useTheme } from "../../hooks/useTheme";
 
 export const ThemeToggle = () => {
   const { toggleTheme } = useTheme();

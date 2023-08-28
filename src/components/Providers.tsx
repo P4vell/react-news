@@ -1,6 +1,6 @@
 import { QueryClientProvider, QueryClient } from "react-query";
-import { FiltersProvider } from "../context/FiltersContext";
-import { ThemeProvider } from "../context/ThemeContext";
+import { FiltersProvider } from "@/context/FiltersContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { BrowserRouter } from "react-router-dom";
 import { ReactNode } from "react";
 

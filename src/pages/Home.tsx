@@ -1,10 +1,10 @@
-import { getTopNews } from "../api/newsApi";
-import { useFilters } from "../hooks/useFilters";
-import { Categories } from "../components/homepage/Categories";
-import { SearchBar } from "../components/homepage/SearchBar";
-import { NewsList } from "../components/news/NewsList";
+import { getTopNews } from "@/api/newsApi";
+import { useFilters } from "@/hooks/useFilters";
+import { Categories } from "@/components/homepage/Categories";
+import { SearchBar } from "@/components/homepage/SearchBar";
+import { NewsList } from "@/components/news/NewsList";
 import { useQuery } from "react-query";
-import { Heading } from "../components/homepage/Heading";
+import { Heading } from "@/components/homepage/Heading";
 
 const Home = () => {
   const { filters } = useFilters();
