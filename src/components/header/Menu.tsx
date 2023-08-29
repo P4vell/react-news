@@ -58,7 +58,7 @@ export const Menu = ({ isOpen, toggleMenu }: MenuProps) => {
           Filter by country
         </h2>
 
-        <ul className="overflow-y-scroll hide-scrollbar">
+        <ul className="overflow-y-scroll menu-scroll dark:menu-scroll-dark">
           {COUNTRIES.map((country) => (
             <li key={country.code}>
               <Button
