@@ -25,7 +25,7 @@ export const NewsCard = ({ news }: NewsCardProps) => {
       <div className="space-y-4 p-6">
         <h3 className="text-lg font-semibold">{title}</h3>
         <p>{description}</p>
-        <div className="flex justify-between items-center text-sm text-zinc-400 font-medium">
+        <div className="flex justify-between items-center text-sm text-zinc-500 font-medium dark:text-zinc-400">
           <p>via {source.name}</p>
           <p>{dateFormatter.format(new Date(publishedAt))}</p>
         </div>
