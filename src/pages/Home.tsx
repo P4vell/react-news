@@ -8,7 +8,7 @@ import { Heading } from "@/components/homepage/Heading";
 
 const Home = () => {
   const { filters } = useFilters();
-  const { data, isLoading } = useQuery(["news", filters], () =>
+  const { data, isLoading, isError } = useQuery(["news", filters], () =>
     getTopNews(filters)
   );
 
@@ -17,7 +17,11 @@ const Home = () => {
       <SearchBar />
       <Categories />
       <Heading filters={filters} />
-      <NewsList newsList={data?.articles} isLoading={isLoading} />
+      <NewsList
+        newsList={data?.articles}
+        isLoading={isLoading}
+        isError={isError}
+      />
     </>
   );
 };
