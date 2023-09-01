@@ -1,6 +1,6 @@
 # The React News
 
-News app built on top of (https://newsapi.org)
+News app built on top of https://newsapi.org
 
 ## General info
 
@@ -13,6 +13,7 @@ Project is created with:
 - React.js
 - TypeScript
 - Tailwind CSS
+- React Query
 - Shadcn ui library
 
 ## Setup
@@ -25,6 +26,10 @@ $ git clone https://github.com/P4vell/react-news.git
 
 # Go into the repository
 $ cd react-news
+
+# Fill .env variable
+
+$ VITE_NEWS_API_KEY=<YOUR_API_KEY>
 
 # Install dependencies
 $ npm install
