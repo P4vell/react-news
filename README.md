@@ -28,7 +28,6 @@ $ git clone https://github.com/P4vell/react-news.git
 $ cd react-news
 
 # Fill .env variable
-
 $ VITE_NEWS_API_KEY=<YOUR_API_KEY>
 
 # Install dependencies
