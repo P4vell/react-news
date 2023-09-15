@@ -8,9 +8,9 @@ export const apiClient = axios.create({
 });
 
 export const getTopNewsUrl = (country: string, category: string) => {
-  return `/top-headlines?country=${country}&category=${category}&pageSize=15`;
+  return `/top-headlines?country=${country}&category=${category}`;
 };
 
 export const getSearchNewsUrl = (query: string) => {
-  return `/everything?q=${query}&pageSize=15`;
+  return `/everything?q=${query}`;
 };

@@ -14,7 +14,7 @@ type NewsListProps = {
 };
 
 export const NewsList = ({ queryKey, url }: NewsListProps) => {
-  const lastNewsRef = useRef<HTMLElement>();
+  const lastNewsRef = useRef<HTMLElement>(null);
   const { ref, entry } = useIntersection({
     root: lastNewsRef.current,
     threshold: 1,
@@ -23,7 +23,9 @@ export const NewsList = ({ queryKey, url }: NewsListProps) => {
     useInfiniteQuery(
       queryKey,
       async ({ pageParam = 1 }) => {
-        const response = await apiClient.get(`${url}&page=${pageParam}`);
+        const response = await apiClient.get(
+          `${url}&pageSize=15&page=${pageParam}`
+        );
         const { articles } = await apiDataSchema.parseAsync(response.data);
         return articles;
       },
